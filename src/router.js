@@ -1,23 +1,37 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from '@/pages/PageHome'
+import ThreadShow from '@/pages/PageThreadShow'
+import Forum from '@/pages/PageForum'
+import NotFound from '@/pages/PageNotFound'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/forum/:id',
+      name: 'Forum',
+      component: Forum,
+      props: true
+    },
+    {
+      path: '/thread/:id',
+      name: 'ThreadShow',
+      component: ThreadShow,
+      props: true
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      component: NotFound
+      // redirect: { name: 'Home' }
     }
   ]
 })
