@@ -1,5 +1,5 @@
 <template>
-  <div  class="post-list">
+  <div class="post-list">
     <PostListItem
       v-for="post in posts"
       :post="post"
