@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import ForumList from '@/components/ForumList'
 import sourceData from '@/data.json'
+import ForumList from '@/components/ForumList'
 
 export default {
   components: {
@@ -21,7 +21,7 @@ export default {
   props: {
     category: {
       required: true,
-      type: Array
+      type: Object
     }
   },
 
