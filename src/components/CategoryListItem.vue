@@ -28,7 +28,7 @@ export default {
   computed: {
     categoryForums () {
       return Object.values(sourceData.forums)
-        .filter(forum => forum.categoryID === this.category['.key'])
+        .filter(forum => forum.categoryId === this.category['.key'])
     }
   }
 }
